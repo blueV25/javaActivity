@@ -30,12 +30,12 @@ public G2Final() {
 
 JPanel p1 = new JPanel(new FlowLayout()); // Create a panel with FlowLayout
         p1.setPreferredSize(new Dimension(150, 100)); 
-       
+
 
     // add image to the panel
     try {
   //Background Image  sa taas   
-         BufferedImage originalImage = ImageIO.read(new File("/C://Users//vigon//Pictures//Screenshots//Screenshot 2024-09-08 230005.png/")); 
+        BufferedImage originalImage = ImageIO.read(new File("/C://Users//vigon//Pictures//Screenshots//Screenshot 2024-09-08 230005.png/")); 
             Image scaledImage = originalImage.getScaledInstance(650, 100, Image.SCALE_SMOOTH);
     
  //Balay ni MAYANG *****************************************************************************************
@@ -77,16 +77,16 @@ JPanel p1 = new JPanel(new FlowLayout()); // Create a panel with FlowLayout
 
             label.add(Carlabel);
             label.add(sublabel);
-             p1.add(label); 
+            p1.add(label); 
 
- 
+
 
 
             
         } catch (IOException e) {
             e.printStackTrace();
         }
-       
+
         add(p1, BorderLayout.PAGE_START); // Add the panel to the top of the frame
 
 
@@ -95,7 +95,7 @@ JPanel p1 = new JPanel(new FlowLayout()); // Create a panel with FlowLayout
 JPanel p2 = new JPanel(new BorderLayout()); // Create a panel with BorderLayout
         p2.setBackground(Color.WHITE);
         p2.setBounds(0,100 ,100 ,300 );
-       add(p2, BorderLayout.CENTER); 
+    add(p2, BorderLayout.CENTER); 
 
 //*************************New button panel**********************************************************************
 
@@ -114,15 +114,15 @@ JButton newButton = new JButton("NEW+");
 
         newButton.addActionListener(new ActionListener() {
     
-         @Override
-         public void actionPerformed(ActionEvent e) {
+        @Override
+        public void actionPerformed(ActionEvent e) {
             tf1.setText("Vehicle Number");
             tf2.setText("Vehicle Brand");
             tf3.setText("Vehicle Model");
             tf4.setText("Vehicle Type");
             tf5.setText("Vehicle Rate");
             tf6.setText("Vehicle Colour");
-  
+
             }
         });
         newButtonPanel.add(newButton, BorderLayout.LINE_END); 
@@ -222,8 +222,7 @@ JButton removeButton = createButton("Remove", "#fc8a51", new ActionListener() {
         } 
     }  
 
-      
-    
+
 private JButton createButton(String text, String colorHex, ActionListener actionListener) {
         JButton button = new JButton(text); 
 
@@ -273,9 +272,9 @@ private JButton createButton(String text, String colorHex, ActionListener action
             JLabel btextlabel = new JLabel(BorderLayout.CENTER);
                    btextlabel.setText("By: DORAEMON and FRIENDS");
                    btextlabel.setBounds(50,50,20,50);
-                   btextlabel.setBackground(Color.WHITE);
-                   btextlabel.setForeground(Color.GRAY);
-                   btextlabel.setFont(new Font("Arial", Font.PLAIN, 11));
+                btextlabel.setBackground(Color.WHITE);
+                btextlabel.setForeground(Color.GRAY);
+                btextlabel.setFont(new Font("Arial", Font.PLAIN, 11));
       
            
 tablePanel.add(bPanel, BorderLayout.SOUTH); 
@@ -419,7 +418,6 @@ public Vehicle(String vehicleNumber, String type , String name, String model, do
         this.model = model;
         this.vehicleRate = vehicleRate;
         this.colour = colour;
-         
     }
 
     // Getter methods for vehicle details
