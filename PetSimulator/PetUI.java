@@ -56,7 +56,7 @@ public class PetUI {
                 System.out.println("Welcome back, " + pet.getName() + "!");
                 game = new PetG(pet);
             } else {
-                System.out.println("WALA PAKAY PET KULERITA KA!!. PAG BUHAT SA!!.");
+                System.out.println("No saved pet found. Let's create a new one.");
                 game = new PetG(createNewPet());
             }
         } else {
@@ -80,24 +80,31 @@ public class PetUI {
         System.out.print("Enter your pet's name: ");
         String name = scanner.nextLine();
 
-        System.out.print("Choose a pet type (1 for Dog, 2 for Cat, 3 for Snake, 4 for Bird, 5 for Dragon): ");
-        int choice = scanner.nextInt();
-        scanner.nextLine();
+        PetType type = null;
+        while (type == null) {
+            System.out.print("Choose a pet type (DOG, CAT, SNAKE, BIRD, DRAGON): ");
+            String typeInput = scanner.nextLine().trim().toUpperCase();
+            try {
+                type = PetType.valueOf(typeInput);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Invalid pet type. Please try again.");
+            }
+        }
 
-        switch (choice) {
-            case 1:
+        // Return the specific pet instance based on PetType
+        switch (type) {
+            case DOG:
                 return new Dog(name);
-            case 2:
+            case CAT:
                 return new Cat(name);
-            case 3:
+            case SNAKE:
                 return new Snake(name);
-            case 4:
+            case BIRD:
                 return new Bird(name);
-            case 5:
+            case DRAGON:
                 return new Dragon(name);
             default:
-                System.out.println("Invalid choice. Exiting.");
-                return null;
+                throw new IllegalStateException("Unexpected pet type: " + type);
         }
     }
 

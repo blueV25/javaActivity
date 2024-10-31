@@ -8,9 +8,11 @@ public abstract class Pet implements Serializable{
     protected int energy;
     protected int age;
     protected int weight;
+    protected PetType type;
 
-    public Pet(String name) {
+    public Pet(String name , PetType type) {
         this.name = name;
+        this.type = type;
         this.happiness = 50;
         this.energy = 100;
         this.age = 1;
@@ -66,6 +68,9 @@ public abstract class Pet implements Serializable{
     }
     public int getWeight() {
         return weight;
+    }
+    public PetType getType() {
+        return type;
     }
 }
 

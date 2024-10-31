@@ -1,8 +1,9 @@
 package PetSimulator;
 
 public class Dragon extends Pet {
+
     public Dragon(String name) {
-        super(name);
+        super(name, PetType.DRAGON); 
     }
     @Override
     public void makeSound() {

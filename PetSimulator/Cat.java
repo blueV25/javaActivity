@@ -1,8 +1,9 @@
 package PetSimulator;
 
 public class Cat extends Pet {
+    
     public Cat(String name) {
-        super(name);
+        super(name, PetType.CAT);
     }
 
     @Override

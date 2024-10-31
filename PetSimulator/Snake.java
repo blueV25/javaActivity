@@ -1,8 +1,9 @@
 package PetSimulator;
 
 public class Snake extends Pet {
+
     public Snake(String name) {
-        super(name);
+        super(name, PetType.SNAKE);
     }
     @Override
     public void makeSound() {
