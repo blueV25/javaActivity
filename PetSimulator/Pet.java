@@ -45,13 +45,13 @@ public abstract class Pet implements Serializable{
      * if the pet is too full it will not eat.
      */
     public void feed() {
-        if (hunger >= 100) {
+        if (hunger <= 0) {
             System.out.println(name + " is too full to eat. Energy: " + energy + ", Hunger: " + hunger);
             return;
         }
 
-        hunger += 25;
-        if (hunger > 100) hunger = 100;
+        hunger -= 25;
+        if (hunger < 0) hunger = 0;
     
         energy += 25;
         if (energy > 100) energy = 100;
@@ -62,7 +62,7 @@ public abstract class Pet implements Serializable{
 
     /**
      * Allows the pet to play, increasing its happiness while decreasing energy levels.
-     * if the pet is too old or too tired it will not play.
+     * if the pet is too old, too tired or too hungry it will not play and will decrease its happiness.
      */
     public void play() {
         if (age >= 20) {
@@ -74,17 +74,26 @@ public abstract class Pet implements Serializable{
         }
 
         if (energy < 20) {
+            happiness -= 10;
             System.out.println(name + " is too tired to play.");
             System.out.println("Energy: " + energy);
             return;
         }
+            if (hunger == 100) {
+                happiness -= 10;
+                System.out.println(name + " is too hungry to play.");
+                System.out.println("Hunger: " + hunger);
+                return;
+            }
+
+        
         energy -= 20;
         if (energy < 0) energy = 0; 
         
         happiness += 15;
         if (happiness > 100) happiness = 100;
 
-        hunger -= 10;
+        hunger += 15;
         if (hunger < 0) hunger = 0;
 
         System.out.println(name + " played. Happiness: " + happiness + ", Energy: " + energy + ", Hunger: " + hunger);
@@ -114,7 +123,7 @@ public abstract class Pet implements Serializable{
      */
     public void grow() {
         age++;
-        if (weight < 70) {
+        if (weight < 100) {
             weight += 5;
             System.out.println(name + " grew. Age: " + age + ", Weight: " + weight + " kg");
         } else {

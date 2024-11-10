@@ -13,7 +13,7 @@ public class PetG {
 
     /** 
      * Constructs a new PetG object with the specified pet.
-     * @param pet the pet to be managed by the game
+     * The pet parameter, the pet to be managed by the game
     */
 
     public PetG(Pet pet) {

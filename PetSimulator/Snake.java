@@ -16,7 +16,7 @@ public class Snake extends Pet {
     */
     @Override
     public void makeSound() {
-        System.out.println(name + " says:SSSSSS HI , POGI ");
+        System.out.println(name + " says:PPSSSSSSTT HI , POGI ");
     }
 
     /**

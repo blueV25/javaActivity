@@ -51,10 +51,10 @@ public class PetUI {
             }
         }
     }
+
 /**
  * Sets up the pet by asking the user whether to load a saved game or create a new one.
  */
-
     private void petSetup() {
         System.out.print("Would you like to load a saved game? (y/n): ");
         String loadChoice = scanner.nextLine().trim().toLowerCase();
